@@ -1,7 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml>
-  <category>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+<category>
     <pattern>*</pattern>
-    <template>I have no answer for that.</template>
-  </category>
+    <template>Benvenuto al bot realizzato per il progetto Ambizione Italia, io sono specializzato in ristoranti,
+    quindi dimmi solo in che città ti trovi e io ti saprò portare al miglior ristorante della città!
+<button>
+    <text>Torino</text>
+    <postback>Torino ristoranti</postback>
+</button><button>
+    <text>Roma</text>
+    <postback>Roma ristoranti</postback>
+</button><button>
+    <text>Firenze</text>
+    <postback>Firenze ristoranti</postback>
+</button><button>
+    <text>Milano</text>
+    <postback>Milano ristoranti</postback>
+</button><button>
+    <text>Napoli</text>
+    <postback>Napoli ristoranti </postback>
+</button>
+</template>
+</category>
+
+<category>
+    <pattern>* ristoranti</pattern>
+    <template><think><set name="citta"><star/></set></think>Che tipo di cucina gradiresti?
+    <button>
+    <text>Pizza</text>
+    <postback>Pizza</postback>
+</button><button>
+    <text>Fast Food</text>
+    <postback>Fast Food</postback>
+</button><button>
+    <text>Cinese</text>
+    <postback>Cinese</postback>
+</button>
+    </template>
+</category>
+
+<category>
+    <pattern>Cinese</pattern>
+    <template>
+        <condition name = "citta" value = "Torino">
+            Il migior ristorante a Torino di cucina Cinese è il ristorante Tientsin
+        </condition>
+        <condition name = "citta" value = "Roma">
+            Il migior ristorante a Roma di cucina Cinese è il ristorante Mei Li Yuan
+        </condition>
+        <condition name = "citta" value = "Milano">
+            Il migior ristorante a Milano di cucina Cinese è il ristorante Bon Wei
+        </condition>
+        <condition name = "citta" value = "Firenze">
+            Il migior ristorante a Firenze di cucina Cinese è il ristorante Nin Hao
+        </condition>
+        <condition name = "citta" value = "Napoli">
+            Il migior ristorante a Napoli di cucina Cinese è il ristorante Hua Quiao
+        </condition>
+</template>
+</category>
+
+<category>
+    <pattern>Pizza</pattern>
+    <template>
+        <condition name = "citta" value = "Torino">
+            La miglior pizzeria a Torino è il ristorante Pizzium
+        </condition>
+        <condition name = "citta" value = "Roma">
+            La miglior pizzeria a Roma è il ristorante Emma Pizzeria
+        </condition>
+        <condition name = "citta" value = "Milano">
+            La miglior pizzeria a Milano è il ristorante PizzaAM
+        </condition>
+        <condition name = "citta" value = "Firenze">
+            La miglior pizzeria a Firenze è il ristorante 3dddì Pizza
+        </condition>
+        <condition name = "citta" value = "Napoli">
+            La miglior pizzeria a Napoli è La Spaccanapoli
+        </condition>
+</template>
+</category>
+
+<category>
+    <pattern>Fast Food</pattern>
+    <template>McDonalds o Burger King</template>
+</category>
+
 </aiml>
